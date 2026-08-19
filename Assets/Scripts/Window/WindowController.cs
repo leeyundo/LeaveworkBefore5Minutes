@@ -53,5 +53,11 @@ public sealed class WindowController : MonoBehaviour, IBeginDragHandler, IDragHa
 
     public void OnEndDrag(PointerEventData eventData) { }
 
+    public void SetTitle(string title)
+    {
+        if (titleText != null)
+            titleText.text = title;
+    }
+
     public void Close() => Destroy(gameObject);
 }
