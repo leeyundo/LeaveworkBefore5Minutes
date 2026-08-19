@@ -1,18 +1,18 @@
 # 퇴근 5분 전 TODO
 
 ## 0. 프로젝트 세팅
-- [ ] Unity 6 URP 2D 프로젝트 생성
-- [ ] WebGL 빌드 설정
-- [ ] 폴더 구조 생성 (Art, Audio, Prefabs, Scripts, SO)
-- [ ] Main 씬 생성
+- [x] Unity 6 URP 2D 프로젝트 생성
+- [x] WebGL 빌드 설정
+- [x] 폴더 구조 생성 (Art, Audio, Prefabs, Scripts, SO)
+- [x] Main 씬 생성
 - [ ] Git 초기 커밋
 
 ## 1. 데스크탑 UI
-- [ ] 1920x1080 Canvas 설정
-- [ ] 배경화면 제작
-- [ ] 작업표시줄 UI 제작
-- [ ] 시계(TMP) 배치
-- [ ] 데스크탑 아이콘 영역 배치
+- [x] 1920x1080 Canvas 설정
+- [x] 배경화면 제작
+- [x] 작업표시줄 UI 제작
+- [x] 시계(TMP) 배치
+- [x] 데스크탑 아이콘 영역 배치
 
 ## 2. 창(Window) 시스템
 - [ ] 기본 Window 프리팹 제작
