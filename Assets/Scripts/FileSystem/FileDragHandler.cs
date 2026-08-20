@@ -7,6 +7,8 @@ public sealed class FileDragHandler : MonoBehaviour, IPointerDownHandler, IBegin
     [SerializeField] private RectTransform itemRect;
     [SerializeField] private Canvas canvas;
 
+    public FileItem FileItem => fileItem;
+
     private RectTransform parentRect;
     private Vector2 pointerOffset;
 
