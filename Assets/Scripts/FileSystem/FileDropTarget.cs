@@ -8,7 +8,14 @@ public enum DropTargetType
     RecycleBin
 }
 
-public sealed class FileDropTarget : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public interface IFileDropReceiver
+{
+    void HandleDrop(FileItem item, PointerEventData eventData);
+}
+
+public interface IDesktopFileDropReceiver : IFileDropReceiver { }
+
+public sealed class FileDropTarget : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler, IFileDropReceiver
 {
     [SerializeField] private DropTargetType targetType;
     [SerializeField] private GameObject dropHighlight;
@@ -28,18 +35,33 @@ public sealed class FileDropTarget : MonoBehaviour, IDropHandler, IPointerEnterH
     {
         if (eventData.pointerDrag != null &&
             eventData.pointerDrag.TryGetComponent<FileDragHandler>(out var dragHandler))
-            HandleDrop(dragHandler.FileItem);
+            HandleDrop(dragHandler.FileItem, eventData);
 
         SetHighlight(false);
     }
 
-    public void HandleDrop(FileItem item)
+    public void HandleDrop(FileItem item, PointerEventData eventData)
     {
         if (item == null)
             return;
 
-        // This step records the target only; it intentionally does not move, copy, or delete files.
+        item.transform.SetParent(transform, false);
+        if (item.transform is RectTransform itemRect)
+            itemRect.anchoredPosition = Vector2.zero;
+
+        item.SetLocation(ToFileLocation(targetType));
         LastDroppedItem = item;
+    }
+
+    private static FileLocation ToFileLocation(DropTargetType type)
+    {
+        return type switch
+        {
+            DropTargetType.Documents => FileLocation.Documents,
+            DropTargetType.USB => FileLocation.USB,
+            DropTargetType.RecycleBin => FileLocation.RecycleBin,
+            _ => FileLocation.Desktop
+        };
     }
 
     private void Awake() => SetHighlight(false);

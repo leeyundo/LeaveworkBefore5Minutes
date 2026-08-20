@@ -2,6 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum FileLocation
+{
+    Desktop,
+    Documents,
+    USB,
+    RecycleBin
+}
+
 public sealed class FileItem : MonoBehaviour
 {
     private static FileItem selectedItem;
@@ -12,6 +20,7 @@ public sealed class FileItem : MonoBehaviour
     [SerializeField] private GameObject selectionHighlight;
 
     public string FileName => fileName;
+    public FileLocation CurrentLocation { get; private set; } = FileLocation.Desktop;
 
     private void Awake()
     {
@@ -30,6 +39,10 @@ public sealed class FileItem : MonoBehaviour
         if (iconImage != null)
             iconImage.sprite = icon;
     }
+
+    public void SetLocation(FileLocation location) => CurrentLocation = location;
+
+    public FileLocation GetLocation() => CurrentLocation;
 
     public void Select()
     {
