@@ -39,10 +39,10 @@
 - [x] 드롭 판정 구현
 
 ## 6. 업무(Task) 시스템
-- [ ] TaskData ScriptableObject 생성
-- [ ] TaskManager 제작
-- [ ] 체크리스트 UI 제작
-- [ ] 업무 완료 판정 구현
+- [x] TaskData ScriptableObject 생성
+- [x] TaskManager 제작
+- [x] 체크리스트 UI 제작
+- [x] 업무 완료 판정 구현
 
 ## 7. 타이머
 - [ ] 5분 카운트다운 구현

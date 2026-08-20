@@ -43,3 +43,38 @@ Unity WebGL 데스크탑 타임어택 게임
 
 Codex는 C# 스크립트만 작성한다.
 Prefab과 UI는 Unity Editor에서 직접 생성한다.
+
+## 진행상황
+
+Unity 6 URP 2D 프로젝트 "LeaveworkBefore5Minutes" 작업 중.
+
+현재 완료:
+STEP 01~04 완료
+STEP 05 코드 및 Unity Editor 작업 완료
+
+현재 TODO:
+1. 데스크탑 UI - 완료
+2. Window 시스템 - 완료
+3. 데스크탑 아이콘
+   - 아이콘 프리팹 제작 완료
+   - 싱글 클릭 선택 완료
+   - 더블 클릭으로 창 열기 완료
+   - 아이콘과 Window 연결 완료
+4. 파일 시스템
+   - FileItem 프리팹 완료
+   - 드래그 완료
+   - 드롭 완료
+   - 파일 이름 표시 완료
+5. 폴더 & 휴지통
+   - Documents 창 완료
+   - USB 창 완료
+   - 휴지통 창 완료
+   - 드롭 판정 완료
+
+현재 상태:
+DocumentsWindow, USBWindow, RecycleBinWindow을 WindowLayer 아래에 만들었고,
+각 Content에 FileItem과 FileDropTarget을 연결함.
+Target Type도 각각 Documents / USB / RecycleBin으로 설정함.
+실행해서 드래그/드롭 테스트까지 완료했고 정상 작동 확인함.
+
+다음 단계는 STEP 06 업무(Task) 시스템.
