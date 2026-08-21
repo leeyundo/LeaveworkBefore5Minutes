@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994e7c59e29b7e24db28935c79dd06aa, type: 3}
+  m_Name: MSG_USB_Backup
+  m_EditorClassIdentifier: Assembly-CSharp::MessageData
+  senderName: "\uB300\uB9AC \uAE40\uBBFC\uC218"
+  message: "USB\uC5D0 New File\uC744 \uBC31\uC5C5\uD574\uC8FC\uC138\uC694."
+  acceptText: "\uD655\uC778\uD588\uC2B5\uB2C8\uB2E4."
+  declineText: "\uC9C0\uAE08\uC740 \uC5B4\uB835\uC2B5\uB2C8\uB2E4."
+  relatedTask: {fileID: 11400000, guid: 62d62dcbd6230b84a905afa00684d8fd, type: 2}
